@@ -29,7 +29,7 @@ class EventBus {
     bool sync = false,
     StreamController? streamController,
   }) {
-    streamController = streamController ?? StreamController.broadcast(sync: sync);
+    this.streamController = streamController ?? StreamController.broadcast(sync: sync);
   }
 
   /// Listen for specific event [T], don't forget cancel the subscription

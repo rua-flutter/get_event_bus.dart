@@ -1,6 +1,6 @@
 name: get_event_bus
 description: A minimal and scalable light-weight event bus library for get.dart
-version: 0.1.0
+version: 1.0.0
 homepage: https://github.com/rua-flutter/get_event_bus.dart
 
 environment:

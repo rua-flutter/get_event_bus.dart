@@ -5,7 +5,7 @@ import 'package:get_event_bus/src/event_bus.dart';
 ///
 /// mount [EventBus] to [GetInterface]
 extension GetEventBusExtension on GetInterface {
-  static final EventBus _bus = EventBus();
+  static EventBus eventBus = EventBus();
 
-  EventBus get bus => _bus;
+  EventBus get bus => eventBus;
 }

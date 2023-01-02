@@ -29,14 +29,16 @@ class EventBus {
     bool sync = false,
     StreamController? streamController,
   }) {
-    this.streamController = streamController ?? StreamController.broadcast(sync: sync);
+    this.streamController =
+        streamController ?? StreamController.broadcast(sync: sync);
   }
 
   /// Listen for specific event [T], don't forget cancel the subscription
   ///
   /// If [cancelOnError] is `true`, the subscription is automatically canceled
   /// when the first error event is delivered. The default is `false`.
-  StreamSubscription<T> on<T>(void Function(T event) onData, {bool? cancelOnError}) {
+  StreamSubscription<T> on<T>(void Function(T event) onData,
+      {bool? cancelOnError}) {
     if (T == dynamic) {
       return (stream as Stream<T>).listen(
         onData,

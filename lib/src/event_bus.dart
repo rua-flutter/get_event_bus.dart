@@ -14,10 +14,10 @@ import 'dart:async';
 ///
 class EventBus {
   /// Underlying stream controller
-  late StreamController _streamController;
+  late StreamController streamController;
 
   /// Event bus stream.
-  Stream get stream => _streamController.stream;
+  Stream get stream => streamController.stream;
 
   /// Creates an [EventBus].
   ///
@@ -29,7 +29,7 @@ class EventBus {
     bool sync = false,
     StreamController? streamController,
   }) {
-    _streamController = streamController ?? StreamController.broadcast(sync: sync);
+    streamController = streamController ?? StreamController.broadcast(sync: sync);
   }
 
   /// Listen for specific event [T], don't forget cancel the subscription
@@ -79,11 +79,11 @@ class EventBus {
 
   /// Fires a new event on the event bus with the specified [event].
   void fire(event) {
-    _streamController.add(event);
+    streamController.add(event);
   }
 
   /// Destroy this [EventBus]. This is generally only in a testing context.
   Future<void> destroy() {
-    return _streamController.close();
+    return streamController.close();
   }
 }

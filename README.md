@@ -48,4 +48,4 @@ void main() {
 
 ## Examples
 
-[check out](https://github.com/rua-flutter/get_event_bus/example/example.md)
+[check out](https://github.com/rua-flutter/get_event_bus.dart/blob/main/example/example.md)
